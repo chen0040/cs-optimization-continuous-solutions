@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9A67A02-C95E-40FC-8333-FAE09C12C3EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ContinuousOptimization</RootNamespace>
+    <AssemblyName>cs-optimization-continuous-solutions</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlgorithmModels\Crossover\CrossoverInstruction.cs" />
+    <Compile Include="AlgorithmModels\Crossover\CrossoverInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Mutation\MutationInstruction.cs" />
+    <Compile Include="AlgorithmModels\Mutation\MutationInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\PopInit\PopInitInstruction.cs" />
+    <Compile Include="AlgorithmModels\PopInit\PopInitInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Selection\SelectionInstruction.cs" />
+    <Compile Include="AlgorithmModels\Selection\SelectionInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Selection\SelectionInstruction_Tournament.cs" />
+    <Compile Include="AlgorithmModels\Survival\SurvivalInstruction.cs" />
+    <Compile Include="AlgorithmModels\Survival\SurvivalInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Survival\SurvivalInstruction_Compete.cs" />
+    <Compile Include="AlgorithmModels\Survival\SurvivalInstruction_Probablistic.cs" />
+    <Compile Include="BaseSolution.cs" />
+    <Compile Include="BaseSolver.cs" />
+    <Compile Include="ChiSquare.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="ComponentModels\IGPPop.cs" />
+    <Compile Include="ComponentModels\IGPSolution.cs" />
+    <Compile Include="ComponentModels\IMOOPop.cs" />
+    <Compile Include="ComponentModels\IPop.cs" />
+    <Compile Include="ComponentModels\ISolution.cs" />
+    <Compile Include="ComponentModels\MOOSolution.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DistributionModel.cs" />
+    <Compile Include="FDistribution.cs" />
+    <Compile Include="Gaussian.cs" />
+    <Compile Include="Helpers\Factorial.cs" />
+    <Compile Include="Helpers\Gamma.cs" />
+    <Compile Include="Helpers\LogHelper.cs" />
+    <Compile Include="Helpers\MergeSort.cs" />
+    <Compile Include="Helpers\PolynomialHelper.cs" />
+    <Compile Include="ISolver.cs" />
+    <Compile Include="LinearAlgebra\MatrixOp.cs" />
+    <Compile Include="ProblemModels\IGPEnvironment.cs" />
+    <Compile Include="ProblemModels\IGPFitnessCase.cs" />
+    <Compile Include="ProblemModels\IMOOProblem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomEngine.cs" />
+    <Compile Include="SpecialFunctions\ClampFunction.cs" />
+    <Compile Include="SpecialFunctions\ErrorFunction.cs" />
+    <Compile Include="SpecialFunctions\GammaFunction.cs" />
+    <Compile Include="SpecialFunctions\InverseErrorFunction.cs" />
+    <Compile Include="SpecialFunctions\InverseLogitFunction.cs" />
+    <Compile Include="SpecialFunctions\LogitFunction.cs" />
+    <Compile Include="Statistics\ANCOVA.cs" />
+    <Compile Include="Statistics\ANCOVAv2.cs" />
+    <Compile Include="Statistics\ANOVA.cs" />
+    <Compile Include="Statistics\Bootstrapping.cs" />
+    <Compile Include="Statistics\ChiSquareGOFTest.cs" />
+    <Compile Include="Statistics\ChiSquareIndependenceTest.cs" />
+    <Compile Include="Statistics\CLT.cs" />
+    <Compile Include="Statistics\CollectionExtensionMethods.cs" />
+    <Compile Include="Statistics\ConfidenceInterval.cs" />
+    <Compile Include="Statistics\Correlation.cs" />
+    <Compile Include="Statistics\DescriptiveStatistics.cs" />
+    <Compile Include="Statistics\HypothesisTesting.cs" />
+    <Compile Include="Statistics\HypothesisTestingForProportion.cs" />
+    <Compile Include="Statistics\LinearCombination.cs" />
+    <Compile Include="Statistics\MANCOVA.cs" />
+    <Compile Include="Statistics\MANOVA.cs" />
+    <Compile Include="Statistics\Mean.cs" />
+    <Compile Include="Statistics\Median.cs" />
+    <Compile Include="Statistics\MultipleComparisons.cs" />
+    <Compile Include="Statistics\Sample.cs" />
+    <Compile Include="Statistics\StandardError.cs" />
+    <Compile Include="Statistics\StdDev.cs" />
+    <Compile Include="Statistics\TwoWayANOVA.cs" />
+    <Compile Include="StudentT.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
