@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MathNet.Numerics, Version=2.4.0.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.2.4.0\lib\net40\MathNet.Numerics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MathNet.Numerics.IO, Version=2.4.0.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.2.4.0\lib\net40\MathNet.Numerics.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +64,8 @@
     <Compile Include="AlgorithmModels\Survival\SurvivalInstruction_Probablistic.cs" />
     <Compile Include="BaseSolution.cs" />
     <Compile Include="BaseSolver.cs" />
+    <Compile Include="Benchmarks\CostFunction_RosenbrockSaddle.cs" />
+    <Compile Include="Benchmarks\CostFunction_Sphere.cs" />
     <Compile Include="ChiSquare.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ComponentModels\IGPPop.cs" />
@@ -64,9 +75,12 @@
     <Compile Include="ComponentModels\ISolution.cs" />
     <Compile Include="ComponentModels\MOOSolution.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="ContinuousSolution.cs" />
+    <Compile Include="ContinuousSolver.cs" />
     <Compile Include="DistributionModel.cs" />
     <Compile Include="FDistribution.cs" />
     <Compile Include="Gaussian.cs" />
+    <Compile Include="GradientEstimation.cs" />
     <Compile Include="Helpers\Factorial.cs" />
     <Compile Include="Helpers\Gamma.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
@@ -74,11 +88,24 @@
     <Compile Include="Helpers\PolynomialHelper.cs" />
     <Compile Include="ISolver.cs" />
     <Compile Include="LinearAlgebra\MatrixOp.cs" />
+    <Compile Include="LocalSearch\AdaptiveRandomSearch.cs" />
+    <Compile Include="LocalSearch\BFGS.cs" />
+    <Compile Include="LocalSearch\ConjugateGradientSearch.cs" />
+    <Compile Include="LocalSearch\FibonacciSearch.cs" />
+    <Compile Include="LocalSearch\GoldenSectionSearch.cs" />
+    <Compile Include="LocalSearch\GradientDescent.cs" />
+    <Compile Include="LocalSearch\NewtonMethod.cs" />
+    <Compile Include="LocalSearch\PowellMethod.cs" />
+    <Compile Include="LocalSearch\RandomSearch.cs" />
+    <Compile Include="LocalSearch\SLOP.cs" />
+    <Compile Include="MultiTrajectoryContinuousSolver.cs" />
+    <Compile Include="ProblemModels\CostFunction.cs" />
     <Compile Include="ProblemModels\IGPEnvironment.cs" />
     <Compile Include="ProblemModels\IGPFitnessCase.cs" />
     <Compile Include="ProblemModels\IMOOProblem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomEngine.cs" />
+    <Compile Include="SingleTrajectoryContinuousSolver.cs" />
     <Compile Include="SpecialFunctions\ClampFunction.cs" />
     <Compile Include="SpecialFunctions\ErrorFunction.cs" />
     <Compile Include="SpecialFunctions\GammaFunction.cs" />
@@ -109,6 +136,14 @@
     <Compile Include="Statistics\StdDev.cs" />
     <Compile Include="Statistics\TwoWayANOVA.cs" />
     <Compile Include="StudentT.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\MathNet.Numerics.authors.txt" />
+    <Content Include="App_Readme\MathNet.Numerics.copyright.txt" />
+    <Content Include="App_Readme\MathNet.Numerics.readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
