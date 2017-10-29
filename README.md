@@ -18,3 +18,15 @@ The package includes various local search and metaheuristics algorithms for cont
 * Powell Method 
 * Random Search
 * SLOP
+
+## Meta-Heuristics
+
+* Differential Evolution
+* Evlutionary Programming
+* Evolution Strategy
+* GRASP
+* Iterated Local Search 
+* Nelder Mead 
+* Stochastic Hill Climbing
+* Tabu Search 
+* Variable Neighbhorhood Search 
