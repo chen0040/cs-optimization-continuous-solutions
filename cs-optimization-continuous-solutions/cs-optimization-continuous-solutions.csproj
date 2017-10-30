@@ -67,7 +67,6 @@
     <Compile Include="Benchmarks\CostFunction_RosenbrockSaddle.cs" />
     <Compile Include="Benchmarks\CostFunction_Sphere.cs" />
     <Compile Include="ChiSquare.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ComponentModels\IGPPop.cs" />
     <Compile Include="ComponentModels\IGPSolution.cs" />
     <Compile Include="ComponentModels\IMOOPop.cs" />
