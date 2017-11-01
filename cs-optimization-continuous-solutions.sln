@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs-optimization-continuous-solutions", "cs-optimization-continuous-solutions\cs-optimization-continuous-solutions.csproj", "{F9A67A02-C95E-40FC-8333-FAE09C12C3EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs-optimization-continuous-solutions-samples", "cs-optimization-continuous-solutions-samples\cs-optimization-continuous-solutions-samples.csproj", "{601F020F-4BFB-49DA-841F-7B9190683309}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F9A67A02-C95E-40FC-8333-FAE09C12C3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9A67A02-C95E-40FC-8333-FAE09C12C3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9A67A02-C95E-40FC-8333-FAE09C12C3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601F020F-4BFB-49DA-841F-7B9190683309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601F020F-4BFB-49DA-841F-7B9190683309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601F020F-4BFB-49DA-841F-7B9190683309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601F020F-4BFB-49DA-841F-7B9190683309}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

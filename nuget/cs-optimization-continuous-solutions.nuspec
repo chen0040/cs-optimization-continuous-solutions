@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>cs-optimization-continuous-solutions</id>
+    <version>1.0.1</version>
+    <authors>chen0040</authors>
+    <owners>chen0040</owners>
+    <licenseUrl>https://github.com/chen0040/cs-optimization-continuous-solutions/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/chen0040/cs-optimization-continuous-solutions</projectUrl>
+    <iconUrl>https://rawgit.com/chen0040/cs-optimization-continuous-solutions/master/icon.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Numerical Optimization Package in which solutions are continuous vectors</description>
+    <releaseNotes>Continuous Numerical Optimization</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Continuous Numerical Optimization, c-sharp</tags>
+    <dependencies>
+      
+    </dependencies>
+  </metadata>
+</package>
