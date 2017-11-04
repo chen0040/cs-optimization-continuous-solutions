@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using ContinuousOptimization.MetaHeuristics.ExtensionMethods;
+using ContinuousOptimization.ProblemModels;
 
 namespace ContinuousOptimization.MetaHeuristics
 {
@@ -14,6 +15,23 @@ namespace ContinuousOptimization.MetaHeuristics
         protected int mPopSize;
         protected int mDimension = 100;
         protected int mBoutSize = 5;
+
+        public EvolutionaryProgramming(CostFunction f, int popSize = 100, int boutSize = 5)
+        {
+            mSolutionGenerator = (dimension, constraints) =>
+            {
+                double[] x_0 = f.CreateRandomSolution();
+                return x_0;
+            };
+
+            mPopSize = popSize;
+            mDimension = f.DimensionCount;
+            mBoutSize = boutSize;
+
+            mUpperBounds = f.UpperBounds;
+            mLowerBounds = f.LowerBounds;
+            
+        }
 
         public EvolutionaryProgramming(CreateSolutionMethod solution_generator, int dimension, int pop_size = 100, int bout_size = 5)
         {

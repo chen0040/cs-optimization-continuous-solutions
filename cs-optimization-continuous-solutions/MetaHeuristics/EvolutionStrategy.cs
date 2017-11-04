@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using ContinuousOptimization.MetaHeuristics.ExtensionMethods;
+using ContinuousOptimization.ProblemModels;
 
 namespace ContinuousOptimization.MetaHeuristics
 {
@@ -15,6 +16,23 @@ namespace ContinuousOptimization.MetaHeuristics
         protected int mOffspringSize_lambda;
         protected int mDimension = 100;
         protected int mSelectedParentCount_rho = 1;
+
+        public EvolutionStrategy(CostFunction f, int mu = 30, int lambda = 20)
+        {
+            mSolutionGenerator = (dimension, constraints) =>
+            {
+                double[] x_0 = f.CreateRandomSolution();
+                return x_0;
+            };
+
+            mPopSize_mu = mu;
+            mOffspringSize_lambda = lambda;
+            mDimension = f.DimensionCount;
+
+            mUpperBounds = f.UpperBounds;
+            mLowerBounds = f.LowerBounds;
+
+        }
 
         public EvolutionStrategy(CreateSolutionMethod solution_generator, int dimension, int mu = 30, int lambda = 20)
         {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using ContinuousOptimization.ProblemModels;
 
 namespace ContinuousOptimization.MetaHeuristics
 {
@@ -42,6 +42,22 @@ namespace ContinuousOptimization.MetaHeuristics
         public DifferentialEvolution(int dimension, CreateSolutionMethod solution_generator)
         {
             mPopSize = dimension * 10;
+        }
+
+        public DifferentialEvolution(CostFunction f)
+        {
+            mSolutionGenerator = (dimension, constraints) =>
+            {
+                double[] x_0 = f.CreateRandomSolution();
+                return x_0;
+            };
+
+            mPopSize = f.DimensionCount * 10;
+            mDimension = f.DimensionCount;
+
+            mUpperBounds = f.UpperBounds;
+            mLowerBounds = f.LowerBounds;
+
         }
 
         protected ContinuousSolution Reproduce(ContinuousSolution[] pop, ContinuousSolution p0, double[] lower_bounds, double[] upper_bounds)

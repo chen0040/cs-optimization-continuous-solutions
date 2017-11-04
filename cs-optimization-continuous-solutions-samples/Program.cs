@@ -9,15 +9,19 @@ namespace ContinuousOptimization.UT
     {
         static void Main(string[] args)
         {
+            UT_EvolutionaryProgramming.RunMain(args);
+            UT_DifferentialEvolution.RunMain(args);
+            UT_EvolutionStrategy.RunMain(args);
+
             //UT_BFGS.Run_Sphere();
             //UT_NelderMead.Run_Sphere();
-            UT_ConjugateGradientSearch.Run_Sphere();
+            //UT_ConjugateGradientSearch.Run_Sphere();
             //UT_SLOP.Run_Sphere();
                 //UT_Powell.Run_Sphere();
 
             //UT_BFGS.RunRosenbrockSaddle(2000);
             //UT_NelderMead.RunRosenbrockSaddle(1000);
-            UT_ConjugateGradientSearch.RunRosenbrockSaddle(1000);
+            //UT_ConjugateGradientSearch.RunRosenbrockSaddle(1000);
             //UT_SLOP.RunRosenbrockSaddle(1000);
             //UT_Powell.RunRosenbrockSaddle(1000);
         }

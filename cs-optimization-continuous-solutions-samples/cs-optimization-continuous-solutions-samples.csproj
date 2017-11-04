@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UT_DifferentialEvolution.cs" />
+    <Compile Include="UT_EvolutionStrategy.cs" />
+    <Compile Include="UT_EvolutionaryProgramming.cs" />
     <Compile Include="UT_BFGS.cs" />
     <Compile Include="UT_ConjugateGradientSearch.cs" />
     <Compile Include="UT_NelderMead.cs" />

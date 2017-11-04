@@ -43,6 +43,8 @@ These algorithms can be found in the "ContinuousOptimization.MetaHeuristics" dir
 
 # Usage
 
+## Local Search Methods on Rosenbrock Optimization Problem
+
 The sample codes below shows how to solve the "Rosenbrock Saddle" continuous optmization problem using ConjugateGradientSearch:
 
 ```cs
@@ -79,6 +81,7 @@ public class CostFunction_RosenbrockSaddle : CostFunction
 		grad[1] = -200 * (x0 * x0 - x1);
 	}
 
+	// Optional: if not overriden, the default gradient esimator will be provided for gradient computation
 	protected override double _Evaluate(double[] solution) // compute the cost of problem given the solution 
 	{
 		double x0 = solution[0];
@@ -107,5 +110,59 @@ s.SolutionUpdated += (best_solution, step) =>
 int max_iteration = 1000;
 ContinuousSoluton finalSolution = s.Minimize(x_0, f, max_iteration);
 ```
+
+## Meta-Heuristics on Rosenbrock 
+
+The sample code below shows how to solve the Rosenbrock using differential evolution.
+
+```cs 
+CostFunction_RosenbrockSaddle f = new CostFunction_RosenbrockSaddle();
+
+int maxIterations = 200;
+DifferentialEvolution s = new DifferentialEvolution(f);
+
+s.SolutionUpdated += (best_solution, step) =>
+{
+	Console.WriteLine("Step {0}: Fitness = {1}", step, best_solution.Cost);
+};
+
+ContinuousSolution finalSolution = s.Minimize(f, maxIterations);
+```
+
+The sample code below shows how to solve the Rosenbrock using evolutionary programming.
+
+```cs
+ CostFunction_RosenbrockSaddle f = new CostFunction_RosenbrockSaddle();
+
+int maxIterations = 200;
+int popSize = 100; // population Size
+EvolutionaryProgramming s = new EvolutionaryProgramming(f, popSize);
+
+s.SolutionUpdated += (best_solution, step) =>
+{
+	Console.WriteLine("Step {0}: Fitness = {1}", step, best_solution.Cost);
+};
+
+ContinuousSolution finalSolution = s.Minimize(f, maxIterations);
+```
+
+The sample code below show how to solve the Rosenbrock using evolution strategy.
+
+```cs 
+CostFunction_RosenbrockSaddle f = new CostFunction_RosenbrockSaddle();
+
+int maxIterations = 200;
+int mu = 30;
+int lambda = 20;
+EvolutionStrategy s = new EvolutionStrategy(f, mu, lambda);
+
+s.SolutionUpdated += (best_solution, step) =>
+{
+	Console.WriteLine("Step {0}: Fitness = {1}", step, best_solution.Cost);
+};
+
+ContinuousSolution finalSolution = s.Minimize(f, maxIterations);
+```
+## More
 
 For more examples, please refers to the cs-optimization-continuous-solutions-samples project.
