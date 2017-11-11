@@ -5,7 +5,7 @@ Local searches for continuous optimization implemented in C#
 # Install
 
 ```bash
-Install-Package cs-optimization-continuous-solutions -Version 1.0.1
+Install-Package cs-optimization-continuous-solutions -Version 1.0.2
 ```
 
 # Features
