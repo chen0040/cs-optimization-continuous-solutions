@@ -5,6 +5,7 @@ Local searches for continuous optimization implemented in C#
 # Install
 
 ```bash
+Install-Package MathNet.Numerics -Version 2.4.0
 Install-Package cs-optimization-continuous-solutions -Version 1.0.2
 ```
 
